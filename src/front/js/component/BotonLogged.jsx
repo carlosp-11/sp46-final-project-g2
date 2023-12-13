@@ -14,6 +14,10 @@ export const BotonLogged = () => {
         actions.logout();
         navigate("/login");
     }
+    const handleIdAuthor = () => {
+        actions.setAuthorIdNumber(1)
+        actions.selectAuthor();
+      }
    
     return (
         <div className="dropdown col-12 col-md-4 pt-2 pe-5 me-5">
@@ -43,7 +47,7 @@ export const BotonLogged = () => {
                 </li>
 
                 <li className="list-group-item-action">
-                    <Link to="/author-profile">
+                    <Link to="/author-profile" onClick={handleIdAuthor}>
                         <button className="btn border border-0 py-1"> Perfil </button>
                     </Link>
                 </li>

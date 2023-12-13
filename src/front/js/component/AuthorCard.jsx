@@ -11,22 +11,18 @@ import { faStarHalfStroke } from "@fortawesome/free-solid-svg-icons";
 import { faAlignJustify } from "@fortawesome/free-solid-svg-icons";
 import { faBookOpenReader } from "@fortawesome/free-solid-svg-icons";
 
-
 export const AuthorCard = (props) => {
   const {store, actions} = useContext(Context);
   const [seguidores, setSeguidores] = useState(0)
   const [escritos, setEscritos] = useState(0)
   const [valoracion, setValoracion] = useState(0)
   
-
   useEffect(()=> {
     setSeguidores (Math.floor(Math.random() * 1000)+1)
     setEscritos (Math.floor(Math.random() * 100)+1)
     setValoracion(((Math.random() * 4)+1).toFixed(1))
-
   }, [])
-
-
+  
   const handleIdAuthor = () => {
     actions.setAuthorIdNumber(props.idNumber)
     actions.selectAuthor();
@@ -36,15 +32,12 @@ export const AuthorCard = (props) => {
   return (
     <div className="card mb-2  mx-1" style={{ height:'218px' }}  >
       <div className="row g-0">
-
         <div className="col-6 col-md-3 col-lg-2 col-xl-2 col-xxl-2 ">
           <div className=" ">
             <Link to="/author-profile">
               
               <img src={
                 props.idNumber == 1? camus : props.idNumber == 3? edgar: props.idNumber == 4? woolf : incognit
-
-
               } className="img-fluid rounded-start" 
               
               alt="..." style={{ height:'217px', width: '155px'  }}  />
@@ -52,7 +45,6 @@ export const AuthorCard = (props) => {
             </Link>
           </div>
         </div>
-
         <div className="col-6 col-md-9 col-lg-10 col-xl-10 col-xxl-10">
           <div className="card-body">
             <Link to="/author-profile" onClick={handleIdAuthor}>
@@ -60,11 +52,11 @@ export const AuthorCard = (props) => {
             </Link>
             <p className="card-text text-truncate pb-1"> {props.aboutMe} </p>
             <div className="">
-              <h6 className="card-text text-body-secondary"><small className="text-body-secondary"> <FontAwesomeIcon icon={faBookOpenReader} />
+              <h6 className="card-text text-body-secondary"><small className="text-body-secondary"> <FontAwesomeIcon icon={faBookOpenReader} style={{color: 'orange'}}/>
                 <span className="text-light"> {seguidores} </span> seguidores </small></h6>
-              <h6 className="card-text text-body-secondary"> <small className="text-body-secondary"><FontAwesomeIcon icon={faAlignJustify} />
+              <h6 className="card-text text-body-secondary"> <small className="text-body-secondary"><FontAwesomeIcon icon={faAlignJustify} style={{color: 'orange'}}/>
                 <span className="text-light"> {escritos} </span> posts </small></h6>
-              <h6 className="card-subtitle fw-lighter"> <small className="text-body-secondary"><FontAwesomeIcon icon={faStar} size="sm" />
+              <h6 className="card-subtitle fw-lighter"> <small className="text-body-secondary"><FontAwesomeIcon icon={faStar} size="sm" style={{color: 'orange'}}/>
                 {/*
                 <FontAwesomeIcon icon={faStar} size="sm" /><FontAwesomeIcon icon={faStar} size="sm" />
                 <FontAwesomeIcon icon={faStar} size="sm" /><FontAwesomeIcon icon={faStarHalfStroke} size="sm" />
@@ -75,9 +67,7 @@ export const AuthorCard = (props) => {
             </div>
           </div>          
         </div>
-
       </div>
     </div >
-
   );
 };

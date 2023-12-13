@@ -45,7 +45,6 @@ export const ProfileCard = (props) => {
             setCancelOn(true);
         }
     }
-
     const handleCancelar = () => {
         setEditOn(false);
         setCancelOn(false);
@@ -54,7 +53,7 @@ export const ProfileCard = (props) => {
     return (
         <div className="card my-1 mx-1"  >
             <img src={
-                store.author.id == 1? camus : store.author.id == 3? poe : store.author.id == 4? woolf : incognit
+                store.authorIdNumber == 1? camus : store.authorIdNumber == 3? edgar : store.authorIdNumber == 4? woolf : incognit
             } className="card-img-top " alt="..." style={{ maxHeight: 'auto' }} />
             <div className="card-body">
                 <h5 className="card-title my-1">{newAlias}</h5>
@@ -92,7 +91,7 @@ export const ProfileCard = (props) => {
                         </div> :
                         <> 
                             <p className="card-text text-body-secondary" > 
-                             <FontAwesomeIcon icon={faPenNib}  /> {localDate}
+                             <FontAwesomeIcon icon={faPenNib}  style={{color: 'orange'}}/> {localDate}
                             </p>
                         </>
                     }
@@ -107,14 +106,14 @@ export const ProfileCard = (props) => {
                                 aria-label="País" aria-describedby="basic-addon1" 
                                 onChange={(e) => { setNewCountry(e.target.value) }} defaultValue={newCountry} />
                         </div> :
-                        <p className="card-text text-body-secondary"><FontAwesomeIcon icon={faLocationDot} /> {newCity} {newCountry} </p>
+                        <p className="card-text text-body-secondary"><FontAwesomeIcon icon={faLocationDot} style={{color: 'orange'}}/> {newCity} {newCountry} </p>
                     }
                 </li>
                 <li className="list-group-item">
-                    <p className="card-text text-body-secondary"><FontAwesomeIcon icon={faBookOpenReader} /> <span className="text-light"> 153 </span> seguidores </p>
+                    <p className="card-text text-body-secondary"><FontAwesomeIcon icon={faBookOpenReader} style={{color: 'orange'}} /> <span className="text-light"> 153 </span> seguidores </p>
                 </li>
                 <li className="list-group-item">
-                    <p className="card-text text-body-secondary"><FontAwesomeIcon icon={faAlignJustify} /> <span className="text-light"> 75 </span> posts </p>
+                    <p className="card-text text-body-secondary"><FontAwesomeIcon icon={faAlignJustify} style={{color: 'orange'}}/> <span className="text-light"> 75 </span> posts </p>
                 </li>
             </ul>
         </div>

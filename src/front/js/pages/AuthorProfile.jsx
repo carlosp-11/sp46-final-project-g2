@@ -38,11 +38,11 @@ export const AuthorProfile = () => {
             {(store.authorIdNumber == store.user.id) || store.authorIdNumber == 0 ?
               <ProfileCard alias={store.author.alias} birthday={store.author.birth_date}
                 city={store.author.city} country={store.author.country}
-                quote={store.author.quote} />
+                quote={store.author.quote} id={store.author.id}/>
               :
               <ProfileCard alias={elemento[0].alias} birthday={elemento[0].birth_date}
                 city={elemento[0].city} country={elemento[0].country}
-                quote={elemento[0].quote} />
+                quote={elemento[0].quote} id={elemento[0].id} />
             }
           </div>
           <div className="col-12 col-md-9">
@@ -71,7 +71,7 @@ export const AuthorProfile = () => {
             <div className="col-12 col-md-3">
               <ProfileCard alias={elemento[0].alias} birthday={elemento[0].birth_date}
                 city={elemento[0].city} country={elemento[0].country}
-                quote={elemento[0].quote} />
+                quote={elemento[0].quote} id= {elemento[0].id} />
             </div>
 
             <div className="col-12 col-md-9">

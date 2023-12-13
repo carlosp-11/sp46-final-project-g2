@@ -17,11 +17,9 @@ export const Jumbotron = () => {
     >
       <div className="container">
       <img src={transparent} ></img>
-        <p className="fs-4">
-          Bienvenido a LiteraryInk.
-        </p>
-        <p className="fs-4">
-          Conecta, inspira y comparte tu pasión por las letras en nuestra comunidad exclusiva para escritores.
+      
+        <p className="fs-4 mt-4">
+          Conecta, inspira y comparte tu pasión por las letras en nuestra comunidad exclusiva para escritores
         </p>
         <Link className="dropdown-item" to="/posts">
           <button className="btn btn-warning fw-bold text-dark mt-4 mb-4" type="button">
